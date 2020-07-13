@@ -167,7 +167,7 @@ form.addEventListener("submit", (e) => {
 
 // Animate label
 form.addEventListener("click", (e) => {
-  const target = e.path[1].childNodes[1].name;
+  const target = e.target.name;
   if (target === "username" || target === "password") {
     const field = document.getElementById(`${target}-label`);
     field.classList.add("form__label-active");

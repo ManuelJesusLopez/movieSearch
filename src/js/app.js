@@ -168,7 +168,6 @@ const showFavMovie = () => {
   const movieID = userList[indexUser].favMovies;
   const favMov = [];
 
-  console.log();
   if (movieID.length <= 0) {
     let output = `
     <h3 class="app__error-title">There are no favorite movies</h3>
@@ -306,7 +305,7 @@ const showMovie = document.getElementById("movies");
 const menu = document.getElementById("menu");
 if (menu) {
   menu.addEventListener("click", (e) => {
-    const actionMenu = e.path[0].dataset.action;
+    const actionMenu = e.target.dataset.action;
     switch (actionMenu) {
       case "fav":
         showFavMovie();
@@ -326,8 +325,8 @@ if (menu) {
 if (showMovie) {
   showMovie.addEventListener("click", (e) => {
     e.preventDefault();
-    const imdbID = e.path[0].dataset.imdbid;
-    const btnAction = e.path[0].dataset.action;
+    const imdbID = e.target.dataset.imdbid;
+    const btnAction = e.target.dataset.action;
 
     // Check buttons to action
     switch (btnAction) {
@@ -350,7 +349,7 @@ if (showMovie) {
 
 // Show Modal Movie Details
 document.addEventListener("click", (e) => {
-  if (e.path[0].dataset.action === "close-modal")
+  if (e.target.dataset.action === "close-modal")
     modal.classList.remove("modal");
 });
 
