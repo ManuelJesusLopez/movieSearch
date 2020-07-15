@@ -113,7 +113,17 @@ const getMovies = (searchText) => {
       });
       showMovie.innerHTML = output;
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      warn.classList.remove("warning-out");
+      warn.classList.add("warning", "warning-error");
+      warn.innerHTML = `<p>Error. Try again, please.</p>`;
+      setTimeout(() => {
+        warn.classList.remove("warning", "warning-error");
+        warn.classList.add("warning-out");
+        warn.innerHTML = "";
+      }, 2000);
+      console.error(err);
+    });
 };
 
 const addMov = () => {
@@ -200,7 +210,17 @@ const showFavMovie = () => {
           });
           showMovie.innerHTML = output;
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          warn.classList.remove("warning-out");
+          warn.classList.add("warning", "warning-error");
+          warn.innerHTML = `<p>Error. Try again, please.</p>`;
+          setTimeout(() => {
+            warn.classList.remove("warning", "warning-error");
+            warn.classList.add("warning-out");
+            warn.innerHTML = "";
+          }, 2000);
+          console.error(err);
+        });
     }
   }
 };
@@ -263,7 +283,17 @@ const createModalViewMovies = (imdbID) => {
       `;
       app.append(modal);
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      warn.classList.remove("warning-out");
+      warn.classList.add("warning", "warning-error");
+      warn.innerHTML = `<p>Error. Try again, please.</p>`;
+      setTimeout(() => {
+        warn.classList.remove("warning", "warning-error");
+        warn.classList.add("warning-out");
+        warn.innerHTML = "";
+      }, 2000);
+      console.error(err);
+    });
 };
 
 //  Main content
