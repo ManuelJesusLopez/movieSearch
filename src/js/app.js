@@ -379,7 +379,7 @@ if (showMovie) {
 
 // Show Modal Movie Details
 document.addEventListener("click", (e) => {
-  if (e.target.dataset.action === "close-modal")
+  if (e.target.dataset.action === "close-modal" || e.target.id === "modal")
     modal.classList.remove("modal");
 });
 
